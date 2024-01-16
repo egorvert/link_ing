@@ -3,6 +3,8 @@ import Button from "../components/Button";
 import Infobar from "../components/Infobar";
 import MobileView from "../components/MobileView";
 import styled from "styled-components";
+import AddHeaderButton from "../components/AddHeaderButton";
+import ChainLinkIcon from "../assets/icons/chainLinkIcon.svg";
 
 
 
@@ -34,6 +36,25 @@ const MOBILE = styled.div`
 
 const BTNCONT = styled.div`
     margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+`
+
+const PLACEHOLDER = styled.div`
+    width: 100%;
+    height: 200px;
+    margin-top: 3rem;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #A8AAA2;
 `
 
 const Links = () => {
@@ -43,7 +64,12 @@ const Links = () => {
                 <Infobar />
                 <BTNCONT>
                     <Button />
+                    <AddHeaderButton />
                 </BTNCONT>
+                <PLACEHOLDER>
+                    <img src={ChainLinkIcon} alt="icon" />
+                    <p>Show the world who you are.<br /> Add a link to get started.</p>
+                </PLACEHOLDER>
             </EDITOR>
 
             <MOBILE>
