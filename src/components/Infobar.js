@@ -5,7 +5,7 @@ import InfoIcon from "../assets/icons/infoIcon.svg"
 
 const BLUECONTAINER = styled.div`
     display: flex;
-    width: 838px;
+    width: 85%;
     height: 72px;
     padding: 12px 16px;
     justify-content: space-between;
