@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Links from './pages/Links';
 import Layout from './pages/Layout';
 import Home from './pages/Home';
+import Landing_Page from './pages/Landing_Page';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
         <Route index element={<Links />} />
         <Route path='/links' element={<Links />} />
       </Route>
+      <Route path="/home" element={<Landing_Page />} />
     </Routes>
   </BrowserRouter>
 );
