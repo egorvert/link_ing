@@ -1,8 +1,11 @@
 import React from "react";
+import Infobar from "../components/Infobar";
 
 const Links = () => {
     return (
-        <div>Hello</div>
+        <div>
+            <Infobar />
+        </div>
     )
 }
 
