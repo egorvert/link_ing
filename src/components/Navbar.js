@@ -89,7 +89,7 @@ const PFP = styled.div`
     color: #FFF;
 `
 
-function Navbar() {
+const Navbar = () => {
   return (
     <NAV>
         <LOGO>Link.ing</LOGO>
