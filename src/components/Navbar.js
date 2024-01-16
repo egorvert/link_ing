@@ -43,7 +43,7 @@ const LINKS = styled.p`
     font-weight: 600;
     display: flex;
     align-items: center;
-    justify content: space-evenly;
+    justify-content: space-evenly;
     gap: 8px;
 `
 
