@@ -10,8 +10,8 @@ const StyledInput = styled.input`
     width: ${props => props.width || '160px'};
 `;
 
-const ExpandingInput = ({ defaultValue, width, fontWeight }) => {
-  const [value, setValue] = useState(defaultValue);
+const ExpandingInput = ({ placeholder, width, fontWeight }) => {
+  const [value, setValue] = useState(placeholder);
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -19,7 +19,7 @@ const ExpandingInput = ({ defaultValue, width, fontWeight }) => {
 
   return (
     <StyledInput
-      value={value}
+      placeholder={value}
       onChange={handleChange}
       width={width}
       fontWeight={fontWeight}

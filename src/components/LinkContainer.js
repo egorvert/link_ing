@@ -55,12 +55,12 @@ const LinkContainer = ({ onDelete }) => {
             <LINK_INFO>
                 <LINK_CONT>
                     <LINK_TITLE_CONT>
-                        <DynamicInput defaultValue="Title (optional)"/>
+                        <DynamicInput placeholder="Title (optional)"/>
                         <img src={PencilIcon} alt="Icon" style={{cursor: 'pointer'}} />
                     </LINK_TITLE_CONT>
 
                     <LINK_BODY_CONT>
-                        <DynamicInput defaultValue={"Enter URL"} width={"120px"} fontWeight={"400"} />
+                        <DynamicInput placeholder={"Enter URL"} width={"120px"} fontWeight={"400"} />
                         <img src={PencilIcon} alt="Icon" style={{cursor: 'pointer'}} />
                     </LINK_BODY_CONT>
                 </LINK_CONT>

@@ -42,7 +42,7 @@ const HeaderContainer = ({ onDelete }) => {
             
             <HEADER_INFO>
                 <HEADER_TITLE_CONT>
-                    <DynamicInput defaultValue="Hello Everyone" />
+                    <DynamicInput placeholder="Hello Everyone" />
                     <img src={PencilIcon} alt="Icon" style={{cursor: 'pointer'}} />
                 </HEADER_TITLE_CONT>
             
