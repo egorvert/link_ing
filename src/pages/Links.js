@@ -5,8 +5,9 @@ import MobileView from "../components/MobileView";
 import styled from "styled-components";
 import AddHeaderButton from "../components/AddHeaderButton";
 import ChainLinkIcon from "../assets/icons/chainLinkIcon.svg";
-
-
+import LinkContainer from "../components/LinkContainer";
+import HeaderContainer from "../components/HeaderContainer";
+import { useState, useEffect } from "react";
 
 const CONTAINER = styled.div`
     display: flex;
@@ -24,6 +25,7 @@ const EDITOR = styled.div`
     width: 60%;
     height: 100%;
     border-right: 1px solid #E0E2D9;
+    gap: 24px;
 `
 
 const MOBILE = styled.div`
@@ -35,7 +37,7 @@ const MOBILE = styled.div`
 `
 
 const BTNCONT = styled.div`
-    margin-top: 3rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -58,25 +60,54 @@ const PLACEHOLDER = styled.div`
 `
 
 const Links = () => {
+    const [components, setComponents] = useState([]);
+    const [showPlaceholder, setShowPlaceholder] = useState(true);
+
+    const addComponent = (type) => {
+        const newComponent = {
+            type,
+            id: Date.now() // unique identifier
+        };
+        setComponents([...components, newComponent]);
+    };
+
+    const deleteComponent = (id) => {
+        setComponents(components.filter(component => component.id !== id));
+    };
+
+    useEffect(() => {
+        setShowPlaceholder(components.length === 0);
+    }, [components]);
+
+    const renderComponent = (component) => {
+        if (component.type === 'header') {
+            return <HeaderContainer key={component.id} onDelete={() => deleteComponent(component.id)} />;
+        } else if (component.type === 'link') {
+            return <LinkContainer key={component.id} onDelete={() => deleteComponent(component.id)} />;
+        }
+    };
+
     return (
         <CONTAINER>
             <EDITOR>
                 <Infobar />
                 <BTNCONT>
-                    <Button />
-                    <AddHeaderButton />
+                    <Button btnPress={() => addComponent('link')} />
+                    <AddHeaderButton btnPress={() => addComponent('header')} />
+                    {components.map(renderComponent)}
                 </BTNCONT>
-                <PLACEHOLDER>
-                    <img src={ChainLinkIcon} alt="icon" />
-                    <p>Show the world who you are.<br /> Add a link to get started.</p>
-                </PLACEHOLDER>
+                {showPlaceholder && (
+                    <PLACEHOLDER>
+                        <img src={ChainLinkIcon} alt="icon" />
+                        <p>Show the world who you are.<br /> Add a link to get started.</p>
+                    </PLACEHOLDER>
+                )}
             </EDITOR>
-
             <MOBILE>
                 <MobileView />
             </MOBILE>
         </CONTAINER>
-    )
-}
+    );
+};
 
 export default Links;
