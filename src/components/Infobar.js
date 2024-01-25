@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import InfoIcon from "../assets/icons/infoIcon.svg"
 
 const BLUECONTAINER = styled.div`
@@ -58,7 +57,7 @@ const Infobar = () => {
     return (
         <BLUECONTAINER>
             <LIVEURL>
-                <img src={InfoIcon}/>
+                <img src={InfoIcon} alt="Icon"/>
                 <p><b>Your Linking is live: </b> <a href='https://apple.com'>link.ing/sussolini</a></p>
             </LIVEURL>
             <COPYURL>
